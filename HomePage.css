@@ -10,21 +10,29 @@
   }
   
   .title {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     letter-spacing: 4px;
     position: relative;
     animation: fadeIn 2s ease-in;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background: linear-gradient(45deg, #40E0D0, #008080, #DAA520);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
   .subtitle {
-    font-size: 1.5rem;
-    color: #DAA520;
+    font-size: 1.2rem;
+    color: #888;
     margin-bottom: 3rem;
     animation: fadeIn 2s ease-in 0.5s both;
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.6;
   }
   
   .menu-container {
@@ -90,13 +98,13 @@
     color: #008080;
   }
   
-  /* Remove these classes since we're using the new menu */
+  /* Remove or comment out these classes if you're not using them elsewhere */
   .tabs-container {
-    display: none; /* or you can completely delete this class */
+    display: none;
   }
   
   .tab-button {
-    display: none; /* or you can completely delete this class */
+    display: none;
   }
   
   .tab-button {
@@ -319,4 +327,117 @@
       transform: rotate(360deg);
     }
   }
+  
+  /* Add this navigation bar styling */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #DAA520;
+    text-decoration: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #008080;
+    transform: translateY(-2px);
+  }
+  
+  .nav-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+
+/* Add these new styles after your existing styles */
+.features-section {
+  margin-top: 100px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.features-title {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.features-subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(34, 34, 34, 0.95);
+  border: 1px solid #008080;
+  border-radius: 15px;
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.feature-icon.teal {
+  background: #40E0D0;
+}
+
+.feature-icon.coral {
+  background: #FF6B6B;
+}
+
+.feature-icon.gold {
+  background: #FFD700;
+}
+
+.feature-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-description {
+  color: #888;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}
   
