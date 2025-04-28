@@ -7,7 +7,8 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [fadeIn, setFadeIn] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     // Start the fade-in animation after component mounts
     setFadeIn(true);
@@ -22,11 +23,31 @@ const HomePage = () => {
 
   const handleNavigate = (path) => {
     navigate(path);
+    setIsMenuOpen(false);
   };
 
   return (
     <div className="home-container custom-cursor">
-      <div className="animated-background"></div>
+      <div className="menu-container">
+        <button 
+          className="menu-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="menu-line"></span>
+          <span className="menu-line"></span>
+          <span className="menu-line"></span>
+        </button>
+        {isMenuOpen && (
+          <div className="menu-dropdown">
+            <button onClick={() => handleNavigate('/single-expense')}>
+              Single Expense
+            </button>
+            <button onClick={() => handleNavigate('/group-expense')}>
+              Group Expense
+            </button>
+          </div>
+        )}
+      </div>
       
       {/* Decorative elements */}
       <div className="circle circle-1"></div>
