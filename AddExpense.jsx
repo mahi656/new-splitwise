@@ -207,10 +207,10 @@ const AddExpense = () => {
             </button>
           </form>
 
-          {/* Transactions Section */}
+
           <div className="transactions-section">
             <div className="transactions-header">
-              <h2>Recent Transactions</h2>
+              <h2>All Transactions</h2>
               <button className="view-all-button">View All</button>
             </div>
             <div className="transactions-list">
@@ -240,51 +240,13 @@ const AddExpense = () => {
               ))}
               {transactions.length === 0 && (
                 <p style={{ textAlign: "center", color: "#888" }}>
-                  No recent transactions
+                  No transactions available
                 </p>
               )}
             </div>
           </div>
         </>
       )}
-
-      <div className="transactions-section">
-        <div className="transactions-header">
-          <h2>All Transactions</h2>
-          <button className="view-all-button">View All</button>
-        </div>
-        <div className="transactions-list">
-          {transactions.map((transaction, index) => (
-            <div
-              key={index}
-              className="transaction-item"
-              onClick={() => {
-                setSelectedExpense(transaction);
-                setShowExpenseDetails(true);
-              }}
-            >
-              <div className="transaction-details">
-                <h3>{transaction.purpose}</h3>
-                <p>
-                  {transaction.date || "N/A"} {transaction.time ? `| ${transaction.time}` : ""}
-                </p>
-                <p>
-                  <strong>Paid by:</strong> {transaction.paidBy || "You"}
-                </p>
-              </div>
-              <div className="transaction-amount">
-                {transaction.currency}
-                {Number.parseFloat(transaction.amount).toFixed(2)}
-              </div>
-            </div>
-          ))}
-          {transactions.length === 0 && (
-            <p style={{ textAlign: "center", color: "#888" }}>
-              No transactions available
-            </p>
-          )}
-        </div>
-      </div>
 
       {showExpenseDetails && selectedExpense && (
         <ExpenseDetailsModal
