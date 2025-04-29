@@ -197,9 +197,65 @@
     }
   }
   
-  /* Custom cursor styling only applies to homepage */
-  .home-container .custom-cursor {
+  .page-wrapper {
+    min-height: 100vh;
+    width: 100%;
     cursor: none;
+    background-color: #222222;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+  }
+  
+  .features-section {
+    width: 100%;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    background-color: #222222;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .custom-cursor {
+    cursor: none !important;
+  }
+  
+  .features-wrapper {
+    width: 100%;
+    background-color: #222222;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .feature-card {
+    background: rgba(34, 34, 34, 0.95);
+    border: 1px solid #008080;
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .feature-card * {
+    cursor: none !important;
   }
   
   .animated-background {
@@ -360,7 +416,37 @@
     margin-bottom: 4px;
   }
 
-/* Add these new styles after your existing styles */
+.button-container {
+  margin: 1.5rem 0;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.get-started-btn,
+.login-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.get-started-btn:hover,
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.get-started-btn:active,
+.login-btn:active {
+  transform: scale(0.98);
+}
+
 .features-section {
   margin-top: 100px;
   width: 100%;
