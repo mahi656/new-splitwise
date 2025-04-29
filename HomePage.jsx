@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaChartLine, FaPlus, FaHeart, FaUsers } from "react-icons/fa";
+import { FaChartLine, FaPlus, FaUser } from "react-icons/fa";
 import ActivityMenu from "../components/ActivityMenu";
-import "../styles/HomePage.css";
+import NewMenu from "../components/NewMenu";
+import '../styles/HomePage.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [fadeIn, setFadeIn] = useState(false);
   const [showActivityMenu, setShowActivityMenu] = useState(false);
+  const [showNewMenu, setShowNewMenu] = useState(false);
+  const username = localStorage.getItem('username') || 'User';
 
   useEffect(() => {
     setFadeIn(true);
@@ -17,10 +20,6 @@ const HomePage = () => {
     <div className="page-wrapper">
       <div className="home-container">
         <div className="nav-container">
-          <div className="nav-item" onClick={() => navigate('/dashboard')}>
-            <FaHome className="nav-icon" />
-            <span>Dashboard</span>
-          </div>
           <div 
             className="nav-item" 
             onMouseEnter={() => setShowActivityMenu(true)}
@@ -35,17 +34,23 @@ const HomePage = () => {
               />
             )}
           </div>
-          <div className="nav-item">
+          <div 
+            className="nav-item" 
+            onMouseEnter={() => setShowNewMenu(true)}
+            onMouseLeave={() => setShowNewMenu(false)}
+            style={{ position: 'relative' }}
+          >
             <FaPlus className="nav-icon" />
             <span>New</span>
+            {showNewMenu && (
+              <NewMenu 
+                onClose={() => setShowNewMenu(false)}
+              />
+            )}
           </div>
           <div className="nav-item">
-            <FaHeart className="nav-icon" />
-            <span>Friends</span>
-          </div>
-          <div className="nav-item">
-            <FaUsers className="nav-icon" />
-            <span>Groups</span>
+            <FaUser className="nav-icon" />
+            <span>{username}</span>
           </div>
         </div>
 
