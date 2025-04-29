@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import facebookIcon from '../facebook.png';
+import searchIcon from '../search.png';
 import '../styles/LoginPage.css';
 
 const LoginPage = () => {
@@ -20,8 +22,13 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Login attempt:', formData);
+    if (formData.username && formData.password) {
+      localStorage.setItem('username', formData.username);
+      alert('LOGIN SUCCESSFUL');
+      navigate('/');
+    } else {
+      alert('Please fill in all fields');
+    }
   };
 
   return (
@@ -65,12 +72,12 @@ const LoginPage = () => {
         </div>
 
         <button type="button" className="social-login facebook">
-          <img src="/facebook-icon.png" alt="Facebook" />
+          <img src={facebookIcon} alt="Facebook" />
           Login with Facebook
         </button>
 
         <button type="button" className="social-login gmail">
-          <img src="/gmail-icon.png" alt="Gmail" />
+          <img src={searchIcon} alt="Gmail" />
           Login with Gmail
         </button>
       </form>
