@@ -3,26 +3,39 @@
   --primary: #00c9b7;
   --primary-dark: #00a396;
   --secondary: #ff9f1c;
-  --dark: #121212;
-  --darker: #0a0a0a;
+  --dark: #000000;
+  --darker: #000000;
   --light: #f8f9fa;
-  --gray: #2d2d2d;
-  --light-gray: #3d3d3d;
+  --gray: #111111;
+  --light-gray: #1a1a1a;
   --danger: #ff6b6b;
   --success: #51cf66;
 }
 
-* {
-  box-sizing: border-box;
+html, body {
   margin: 0;
   padding: 0;
+  background-color: #000000;
+  min-height: 100vh;
+  width: 100%;
 }
 
 body {
-  background-color: #000;
   color: #fff;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
+}
+
+/* Main Container */
+#root {
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.app-container {
+  background-color: #000000;
+  min-height: 100vh;
+  width: 100%;
 }
 
 /* Container & Layout */
@@ -31,6 +44,75 @@ body {
   margin: 0 auto;
   padding: 2rem 1.5rem;
   min-height: 100vh;
+  background-color: #000000;
+}
+
+/* Header Section */
+.header-section {
+  background-color: #000000;
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.main-content {
+  background-color: #000000;
+  min-height: calc(100vh - 80px); /* Adjust based on your header height */
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #000000;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-title {
+  background: linear-gradient(135deg, var(--primary), #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* Navigation */
+.nav-container {
+  background-color: #000000;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  margin-bottom: 2rem;
+}
+
+.main-heading {
+  background: linear-gradient(135deg, var(--primary), #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.sub-heading {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -86,17 +168,13 @@ body {
 
 /* Form Styles */
 .form {
-  background-color: var(--darker);
-  border-radius: 1rem;
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.form:hover {
-  transform: translateY(-5px);
+  background-color: #000000;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0, 201, 183, 0.1);
+  border: 1px solid rgba(0, 201, 183, 0.2);
 }
 
 .form-columns {
@@ -127,19 +205,20 @@ body {
 
 .input {
   width: 100%;
-  padding: 0.9rem 1.2rem;
-  background-color: var(--gray);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 16px;
+  background-color: #000000;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   color: #fff;
-  border-radius: 0.75rem;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
 .input:focus {
-  outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 201, 183, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 201, 183, 0.1);
+  outline: none;
 }
 
 /* Expense Input */
@@ -151,26 +230,30 @@ body {
 }
 
 .currency-select {
-  width: 100%;
+  width: 80px;
   padding: 0.9rem 0.5rem;
-  background-color: var(--gray);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #000000;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   color: #fff;
-  border-radius: 0.75rem;
+  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.currency-select:hover {
+.currency-select:focus {
   border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(0, 201, 183, 0.1);
+  outline: none;
 }
 
 /* Members Section */
 .members-container {
-  background-color: var(--gray);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
+  background-color: #000000;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 180px;
+  border: 1px solid rgba(0, 201, 183, 0.2);
 }
 
 .members-grid {
@@ -180,17 +263,16 @@ body {
 }
 
 .member-item {
-  background-color: var(--dark);
-  border-radius: 0.75rem;
-  overflow: hidden;
+  background-color: #000000;
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .member-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 201, 183, 0.1);
 }
 
 .member-content {
@@ -260,16 +342,15 @@ body {
 
 .add-member-button {
   width: 100%;
-  min-height: 120px;
-  background-color: var(--gray);
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  border-radius: 0.75rem;
+  height: 60px;
+  background-color: #000000;
+  border: 2px dashed rgba(0, 201, 183, 0.3);
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 201, 183, 0.5);
+  font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -301,25 +382,22 @@ body {
 /* Submit Button */
 .submit-button {
   width: 100%;
-  padding: 1.2rem;
+  padding: 16px;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  margin-top: 1.5rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0, 201, 183, 0.2);
 }
 
 .submit-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 201, 183, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 201, 183, 0.3);
 }
 
 .submit-button:active {
@@ -469,13 +547,13 @@ body {
 }
 
 .modal-content {
-  background-color: var(--darker);
+  background-color: #000000;
   border-radius: 1rem;
   padding: 2.5rem;
   max-width: 500px;
   width: 90%;
-  border: 1px solid rgba(0, 201, 183, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 201, 183, 0.2);
+  border: 1px solid rgba(0, 201, 183, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 201, 183, 0.1);
   position: relative;
   animation: modalFadeIn 0.3s ease-out;
 }
@@ -677,12 +755,12 @@ body {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: var(--dark);
+  background-color: #000000;
   padding: 1rem;
   border-radius: 0.75rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 201, 183, 0.1);
   z-index: 10;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 201, 183, 0.2);
   animation: slideDown 0.3s ease-out;
 }
 
@@ -705,8 +783,8 @@ body {
 .calc-input {
   width: 80px;
   padding: 0.6rem;
-  background-color: var(--gray);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #000000;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   color: white;
   border-radius: 0.5rem;
   font-size: 0.9rem;
@@ -890,14 +968,15 @@ body {
   color: var(--primary);
   transform: rotate(90deg);
 }
+
 /* Form Layout Improvements */
 .form {
-  background-color: var(--darker);
-  border-radius: 1rem;
+  background-color: #000000;
+  border-radius: 12px;
   padding: 2rem;
   margin-bottom: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 201, 183, 0.2);
 }
 
 .form-columns {
@@ -928,8 +1007,8 @@ body {
 .input {
   width: 100%;
   padding: 0.9rem 1.2rem;
-  background-color: var(--gray);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #000000;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   color: #fff;
   border-radius: 0.75rem;
   font-size: 1rem;
@@ -945,10 +1024,11 @@ body {
 
 /* Members Section */
 .members-container {
-  background-color: var(--gray);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  min-height: 150px;
+  background-color: #000000;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 180px;
+  border: 1px solid rgba(0, 201, 183, 0.2);
 }
 
 .members-grid {
@@ -959,16 +1039,15 @@ body {
 
 .add-member-button {
   width: 100%;
-  min-height: 120px;
-  background-color: var(--gray);
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  border-radius: 0.75rem;
+  height: 60px;
+  background-color: #000000;
+  border: 2px dashed rgba(0, 201, 183, 0.3);
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 201, 183, 0.5);
+  font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -983,10 +1062,10 @@ body {
 .currency-select {
   width: 80px;
   padding: 0.9rem 0.5rem;
-  background-color: var(--gray);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #000000;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   color: #fff;
-  border-radius: 0.75rem;
+  border-radius: 8px;
   font-size: 1rem;
 }
 
@@ -1009,15 +1088,16 @@ body {
   cursor: pointer;
   margin-top: 1rem;
 }
+
 /* Form Container */
 .form {
-  background-color: #1a1a1a;
+  background-color: #000000;
   border-radius: 12px;
   padding: 30px;
   margin: 0 auto;
   max-width: 800px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0, 201, 183, 0.1);
+  border: 1px solid rgba(0, 201, 183, 0.2);
 }
 
 /* Two-column layout */
@@ -1045,8 +1125,8 @@ body {
 .input {
   width: 100%;
   padding: 14px 16px;
-  background-color: #2d2d2d;
-  border: 1px solid #3d3d3d;
+  background-color: #000000;
+  border: 1px solid rgba(0, 201, 183, 0.2);
   color: #fff;
   border-radius: 8px;
   font-size: 15px;
@@ -1061,38 +1141,40 @@ body {
 
 /* Members section with proper containment */
 .members-container {
-  background-color: #2d2d2d;
+  background-color: #000000;
   border-radius: 8px;
   padding: 20px;
   min-height: 180px;
+  border: 1px solid rgba(0, 201, 183, 0.2);
 }
 
 /* Add member button */
 .add-member-button {
   width: 100%;
   height: 60px;
-  background-color: #2d2d2d;
-  border: 2px dashed #3d3d3d;
+  background-color: #000000;
+  border: 2px dashed rgba(0, 201, 183, 0.3);
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #777;
+  color: rgba(0, 201, 183, 0.5);
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .add-member-button:hover {
-  border-color: #00c9b7;
-  color: #00c9b7;
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: rgba(0, 201, 183, 0.05);
 }
 
 /* Submit button */
 .submit-button {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #00c9b7, #00a396);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
   border: none;
   border-radius: 8px;
